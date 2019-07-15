@@ -1,39 +1,28 @@
 package com.stackroute.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 public class Actor {
 
-    private String Name;
-    private String Gender;
+    @Value("${actor.name}")
+    private String name;
+
+    @Value("${actor.gender}")
+    private String gender;
+
+    @Value("${actor.age}")
     private int age;
+    public Actor(){}
 
-    public Actor() {
-    }
 
-    public Actor(String name, String gender, int age) {
-        Name = name;
-        Gender = gender;
-        this.age = age;
-    }
 
-    //    public void setName(String name) {
-//        Name = name;
-//    }
-//
-//    public void setGender(String gender) {
-//        Gender = gender;
-//    }
-//
-//    public void setAge(int age) {
-//        this.age = age;
-//    }
-   /* public void act()
+
+    public void act()
     {
-        System.out.println(this.Name+" is an actor");
-    }*/
-
-    public void act() {
-        System.out.println("Acting");
-
-
+        System.out.println(this.name+" is acting");
     }
+
+
 }
