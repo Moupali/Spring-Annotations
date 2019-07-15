@@ -4,16 +4,16 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-public class Movie
-{
+public class Movie {
 
     Actor actor;
     String nameOfBean;
     private ApplicationContext applicationContext;
 
-    public Movie(){}
+    public Movie() {
+    }
 
-    public void show(){
+    public void show() {
         System.out.println("Its movie time");
     }
 
@@ -21,8 +21,7 @@ public class Movie
         this.actor = actor;
     }
 
-    public void act()
-    {
+    public void act() {
         actor.act();
     }
 
@@ -32,7 +31,10 @@ public class Movie
     }
 
     public void setBeanName(String s) {
-        nameOfBean=s;
+        nameOfBean = s;
 
     }
+
+
+
 }

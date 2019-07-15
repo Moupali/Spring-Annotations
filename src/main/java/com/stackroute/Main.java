@@ -10,10 +10,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        Object ob;
-        // System.out.println("Hello");
-        AbstractApplicationContext context=new AnnotationConfigApplicationContext(ConfigClass.class);
-        context.getBean("Arya", Movie.class).act();
-
+        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
+        context.register(ConfigClass.class);
+        context.refresh();
+        Movie movie=context.getBean("movieB", Movie.class);
+        Movie movie1=context.getBean("movieA", Movie.class);
+        movie.act();
+        movie1.act();
+        //Actor actor=context.getBean("actor", Actor.class);
+        System.out.println(movie1==movie);
     }
 }
