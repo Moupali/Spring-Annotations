@@ -18,6 +18,12 @@ public class ConfigClass {
 //        return actor;
 
     }
+
+    @Bean
+    public BeanPostProcessorDemoBean beanPostProcessorDemoBean()
+    {
+        return new BeanPostProcessorDemoBean();
+    }
     @Bean(name={"DJ","Arya"})
     public Movie movieBean()//bean name is movieBean
     {
